@@ -23,7 +23,7 @@ object Recursion extends App {
     @tailrec
     def factHelper(x: Int, accumulator: BigInt): BigInt = {
       if (x <= 1) accumulator
-      else factHelper(x-1, x * accumulator)
+      else factHelper(x-1, x * accumulator) //recursion on last line is better for performance
     }
 
     factHelper(n, 1)
