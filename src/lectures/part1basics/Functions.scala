@@ -62,7 +62,7 @@ object Functions extends App {
 
   def isPrime(n: Int) : Boolean = {
     def checkNum(m: Int) : Int = {
-      if (m <= 1) throw IsPrimeException("Finished, it is prime")
+      if (m <= 1) throw IsPrimeException()
       if (n % m == 0 && m != 1) throw IsNotPrimeException(m + "")
       else checkNum(m-1)
     }
@@ -86,6 +86,6 @@ object Functions extends App {
 
 }
 
-case class IsPrimeException(value: "Finished, it is prime") extends Throwable
+case class IsPrimeException() extends Throwable
 
 case class IsNotPrimeException(str: String) extends Throwable
